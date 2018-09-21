@@ -30,7 +30,7 @@ use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\entity\EntityTeleportEvent;
 use pocketmine\item\Item;
 use pocketmine\level\Position;
-use pocketmine\math\Vector3;
+use pocketmine\math\Facing;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
@@ -123,15 +123,15 @@ class EconomyShop extends PluginBase implements Listener{
 						}
 
 						if(trim($side) === ""){
-							$side = Vector3::SIDE_UP;
+							$side = Facing::UP;
 						}else{
 							switch(strtolower($side)){
-								case "up": case Vector3::SIDE_UP: $side = Vector3::SIDE_UP;break;
-								case "down": case Vector3::SIDE_DOWN: $side = Vector3::SIDE_DOWN;break;
-								case "west": case Vector3::SIDE_WEST: $side = Vector3::SIDE_WEST;break;
-								case "east": case Vector3::SIDE_EAST: $side = Vector3::SIDE_EAST;break;
-								case "north": case Vector3::SIDE_NORTH: $side = Vector3::SIDE_NORTH;break;
-								case "south": case Vector3::SIDE_SOUTH: $side = Vector3::SIDE_SOUTH;break;
+								case "up": case Facing::UP: $side = Facing::UP;break;
+								case "down": case Facing::DOWN: $side = Facing::DOWN;break;
+								case "west": case Facing::WEST: $side = Facing::WEST;break;
+								case "east": case Facing::EAST: $side = Facing::EAST;break;
+								case "north": case Facing::NORTH: $side = Facing::NORTH;break;
+								case "south": case Facing::SOUTH: $side = Facing::SOUTH;break;
 								case "shop": case -1: $side = -1;break;
 								case "none": case -2: $side = -2;break;
 								default:
