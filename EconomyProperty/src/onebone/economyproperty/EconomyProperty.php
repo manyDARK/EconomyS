@@ -97,11 +97,7 @@ class EconomyProperty extends PluginBase implements Listener{
 			@unlink($this->getDataFolder()."Properties.sqlite3");
 		}
 	}
-
-	public function onDisable(){
-		$this->property->close();
-	}
-
+	
 	public function onBlockTouch(PlayerInteractEvent $event){
 		if($event->getAction() !== PlayerInteractEvent::RIGHT_CLICK_BLOCK){
 			return;
